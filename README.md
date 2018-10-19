@@ -1,5 +1,7 @@
 # Facerider: New and improved mitmf fixes for Nethunter Phones and Tablets
 
+![](https://www.offensive-security.com/wp-content/uploads/2014/12/nethunter-onePlus-300x280.png)
+
 Hello, so I just got my brand new/used OnePlus One and immediately added Kali NetHunter to it. Only to my dismay, that a number of features are broken.
 
 This repo specifically fixes the functionality of the MITMf overlay on your NetHunter App. Rather than try to fix the overlay's mitmf command-line-parser (it leaves empty --whitelist and --blacklist options causing the attack to break on runtime), I decided to write a simple Python script with a centralized configuration option in ./Facerider/mitmf.cfg
