@@ -4,9 +4,9 @@
 
 Hello, so I just got my brand new/used OnePlus One and immediately added Kali NetHunter to it. Only to my dismay, that a number of features are broken.
 
-This repo specifically fixes the functionality of the MITMf overlay on your NetHunter App. Rather than try to fix the overlay's mitmf command-line-parser (it leaves empty --whitelist and --blacklist options causing the attack to break on runtime), I decided to write a simple Python script with a centralized configuration option in ./Facerider/mitmf.cfg
+**This repo specifically fixes the functionality of the MITMf overlay on your NetHunter App**. Rather than try to fix the overlay's mitmf command-line-parser (it leaves empty --whitelist and --blacklist options causing the attack to break on runtime), I decided to write a simple Python script with a centralized configuration option in ./Facerider/mitmf.cfg
 
-Using this is much simpler, just edit mitmf.cfg with your Android text editor of choice (I use Total Commander's text editing function) and set your options to 0 (OFF) or 1 (ON), and set variables such as your Beef Framework hook.js URL to the = sign, and then run
+**Using this is much simpler, just edit mitmf.cfg with your Android text editor of choice** (I use Total Commander's text editing function) and set your options to 0 (OFF) or 1 (ON), and set variables such as your Beef Framework hook.js URL to the = sign, and then run
 
 <code>cd Facerider;python wip_mitmf_improved.py</code>
 
@@ -48,5 +48,5 @@ SPOOF_TARGET can be left commented out if you wish to attack the entire subnet.
 
 # Known Issues
 
-Running the --filepwn and --browsersniper options throws an error from the mitmf app. It is unable to connect to the msfrpcd service no matter how hard I try. This partly has to do with the changes that Rapid7 added to their msfrpc daemon and the fact that mitmf has been a abandoned project since 2015. I am still WORKING on resolving this.
+Running the --filepwn and --browsersniper options throws an error from the mitmf app. It is unable to connect to the msfrpcd service no matter how hard I try. This partly has to do with the changes that Rapid7 added to their msfrpc daemon and the fact that **mitmf has been a abandoned project since 2015. I am still WORKING on resolving this.**
 
