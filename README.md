@@ -12,6 +12,7 @@ This can be configured to work as a Custom Command in the NetHunter App Menu
 
 Within it, is a simple two-button ON/OFF attack switch. Select 1 and press [Enter] to start the attack. Select 2 and [Enter] to stop the attack and wipe all traces of any background processes that may be running (Responder listeners on certain ports)
 
+![](https://raw.githubusercontent.com/tanc7/Facerider/master/fr-simpleonoff.png)
 # Installation
 
 Using your nethunter device, git clone this repo
@@ -20,6 +21,8 @@ Using your nethunter device, git clone this repo
 
 Then edit the mitmf.cfg file, personally I do not use nano on Kali Nethunter because it's wonky with the phone's display options as you shift between portrait and landscape. You can install Total Commander from the Android App Store instead.
 
+![](https://raw.githubusercontent.com/tanc7/Facerider/master/fr-config.png)
+
 Leave empty = options commented out so the script won't throw a error.
 
 # Beef Framework on a Remote VPS
@@ -27,6 +30,8 @@ Leave empty = options commented out so the script won't throw a error.
 The line "JS_URL = http://127.0.0.1:3000/hook.js" can be modified to point to a remote VPS (such as Amazon Web Services) running the beef framework allowing you to hook local victims browsers and then exploit them remotely.
 
 Assuming you are using a wireless card and you have wireless connected your Nethunter device to a hotspot...
+
+![](https://raw.githubusercontent.com/tanc7/Facerider/master/fr-beef-hook.png)
 
 <code>
 set INTERFACE = wlan0
