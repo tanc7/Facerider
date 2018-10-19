@@ -2,7 +2,7 @@
 
 ![](https://www.offensive-security.com/wp-content/uploads/2014/12/nethunter-onePlus-300x280.png)
 
-Hello, so I just got my brand new/used OnePlus One and immediately added Kali NetHunter to it. Only to my dismay, that a number of features are broken.
+Hello, so I just got my brand new/used OnePlus One and immediately added Kali NetHunter to it. Only to my dismay, that a number of features are broken. (However a handful of features such as the Duckhunter HID module worked like a charm, not to knock on the original devs of Nethunter)
 
 **This repo specifically fixes the functionality of the MITMf overlay on your NetHunter App**. Rather than try to fix the overlay's mitmf command-line-parser (it leaves empty --whitelist and --blacklist options causing the attack to break on runtime), I decided to write a simple Python script with a centralized configuration option in ./Facerider/mitmf.cfg
 
@@ -49,4 +49,15 @@ SPOOF_TARGET can be left commented out if you wish to attack the entire subnet.
 # Known Issues
 
 Running the --filepwn and --browsersniper options throws an error from the mitmf app. It is unable to connect to the msfrpcd service no matter how hard I try. This partly has to do with the changes that Rapid7 added to their msfrpc daemon and the fact that **mitmf has been a abandoned project since 2015. I am still WORKING on resolving this.**
+
+# Don't forget to update your sources.list!
+
+If you just installed Nethunter, you may have realized it is using the nonexistent Sana repositories, predating Kali linux rolling. Because of that, you are unable to apt-get update.
+
+All this can be fixed by updating your sources.list, in Total Commander
+
+1. Navigate to /data/local/nhsystem/kali-armrf/etc/apt
+2. Edit the sources.list file to have the following entries instead
+
+<code>deb http://http.kali.org/kali kali-rolling main non-free contrib</code>
 
