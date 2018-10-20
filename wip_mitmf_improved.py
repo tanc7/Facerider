@@ -7,6 +7,53 @@ popen_background = eznhlib.popen_background
 clean_iptables = eznhlib.clean_iptables
 
 config_file = "mitmf.cfg"
+
+def readToLines(config_file):
+    r = popen_background("cat mitmf.cfg  | grep -vi \#")
+    print str(r)
+    l = r.splitlines()
+    return l
+
+def getProxyARPiface1(config_file):
+    lines = readToLines(config_file)
+    for line in lines:
+        if re.search("NETIFACE_ONE",line):
+            i = line.split(" = ")
+            iface1 = str(i[1])
+    return iface1
+
+def getProxyARPiface2(config_file):
+    lines = readToLines(config_file)
+    for line in lines:
+        if re.search("NETIFACE_TWO",line):
+            i = line.split(" = ")
+            iface2 = str(i[1])
+    return iface2
+
+def togglePARPDebugMode(lines, c):
+    for line in lines:
+        if re.search("PARP_DEBUG_MODE",line):
+            i = line.split(" = ")
+            if i[1] == "1":
+                c = c + " -d"
+                print str(c)
+            else:
+                pass
+    return c
+def startProxyARP(cmd):
+    lines = readToLines(config_file)
+    c = "parprouted"
+    iface1 = getProxyARPiface1(config_file)
+    iface2 = getProxyARPiface2(config_file)
+    c = togglePARPDebugMode(lines, c)
+    for line in lines:
+        if re.search("PROXY_ARP_MODE", line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                c = c + " {} {} &".format(str(iface1),str(iface2))
+                bash_cmd(c)
+                print str(c)
+    return cmd
 def readConfig(config_file):
     cmd = "mitmf"
     # f = open(config_file,'r')
@@ -148,7 +195,8 @@ def readConfig(config_file):
             s = line.split(" = ")
             if s[1] == "1":
                 cmd = cmd + " --forcewpadauth"
-    print cmd
+    cmd = startProxyARP(cmd)
+    print str(cmd)
     startAttack(cmd)
     return cmd
 
@@ -172,7 +220,7 @@ def main():
     if userInput == 1:
         readConfig(config_file)
     elif userInput == 2:
-        cmd = "fuser -k 55552/tcp 55553/tcp 587/tcp 110/tcp 9999/tcp 143/tcp 80/tcp 10000/tcp 21/tcp 88/tcp 25/tcp 1433/tcp 445/tcp 3141/tcp 389/tcp"
+        cmd = "fuser -k 55552/tcp 55553/tcp 587/tcp 110/tcp 9999/tcp 143/tcp 80/tcp 10000/tcp 21/tcp 88/tcp 25/tcp 1433/tcp 445/tcp 3141/tcp 389/tcp;pkill parprouted"
         bash_cmd(cmd)
     else:
         print "You have entered a invalid option"
