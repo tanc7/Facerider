@@ -173,3 +173,13 @@ By running the mitmf attack code, it will now listen and inject requests on both
 Keen IT personnel will perceive using parprouted as a ARP-Spoofing attack. Proxy ARP Daemons can be defeated (crashed) by spamming ARP requests to devices that do not exist to the attacker.
 
 In other words, you can be one-shotted. In the event that happens, check your routing tables because it may get borked.
+
+# More Warnings of Proxy ARP, or why I kept it disabled
+
+Proxy ARP + mitmf framework plugins is a mean, MEAN, combination.
+
+Basically mitmf plugins sniff for traffic, and either analyzes it, parses it, or modifies it before sending it back to the victim. Now, given the doors that are kicked open via activation of Proxy ARP Daemons, mitmf will respond to EVERY ARP request it sees, generating a MONSTER amount of traffic and triggering alarms in even a small SOHO business.
+
+You can crash and kill routers using Proxy ARP with mitmf! Be forewarned! You can permanently bork your own routing tables and iptables (until you either flush them or reboot).
+
+Only activate Proxy ARP, well... never. Unless you are desperate.
