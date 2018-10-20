@@ -61,3 +61,115 @@ All this can be fixed by updating your sources.list, in Total Commander
 
 <code>deb http://http.kali.org/kali kali-rolling main non-free contrib</code>
 
+# Attacking/Bridging Multiple Subnets with Proxy ARP, the noob way, toggleable option in Facerider
+
+Recently I encountered a wireless network that automatically assigned the subnet 192.168.0.0 to my Kali Linux VM in VirtualBox and subnet 192.168.1.0 to my physical devices like my phone. Attempting to use routing table commands to allow both devices to communicate (SSH for example) proved to be futile.
+
+Thats when I decided to use a "noob" or "cheater" tactic, that is EXTREMELY noisy and MAY crash the router itself, it's called a Proxy ARP bridge.
+
+This allows me to perform the seemingly impossible task of merging virtual netiface eth0 with my physically connected ALFA wireless card (that is passed over to my VM via USB pass-through), **allowing me to attack victims of BOTH subnets at once.**
+
+How does it work?
+
+Virtual Ethernet eth0 (192.168.0.0) <--Forwards ARP requests--> **Proxy ARP Daemon** <--Forwards ARP requests--> Physical ALFA card (192.168.1.0)
+
+**This is probably one of the first practical uses of a Proxy ARP Daemon for the purposes of penetration testing**. Previously, it was known to be a no-hassle way to allow multiple subnets and netiface devices to communicate to each other (including allowing a ethernet card to talk to the network of a wireless card).
+
+TLDR. I added this option into Facerider's config as a disabled feature since I am unsure if you have multiple wireless cards connected via OTG to your Nethunter device.
+
+To use this, install parprouted (Proxy ARP Routing Daemon)
+
+<code>apt-get update;apt-get install -y parprouted</code>
+
+Then to prove that it works and is forwarding requests between both interfaces, you will run... on a Laptop/Desktop with both a Ethernet Connection and Wireless Card connection
+
+<code>parprouted -d eth0 wlan0</code>
+
+As you can see, the <code>route -n</code> command returns this
+
+<code>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.0.1     0.0.0.0         UG    100    0        0 eth0
+0.0.0.0         192.168.1.1     0.0.0.0         UG    600    0        0 wlan0
+169.254.13.8    0.0.0.0         255.255.255.255 UH    50     0        0 wlan0
+169.254.33.6    0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+169.254.84.157  0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.0     0.0.0.0         255.255.255.0   U     100    0        0 eth0
+192.168.0.1     0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.8     0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.57    0.0.0.0         255.255.255.255 UH    50     0        0 wlan0
+192.168.0.67    0.0.0.0         255.255.255.255 UH    50     0        0 wlan0
+192.168.0.98    0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.117   0.0.0.0         255.255.255.255 UH    50     0        0 wlan0
+192.168.0.127   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.139   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.154   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.170   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.177   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.181   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.184   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.212   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.230   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.238   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.242   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.249   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.0.254   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U     600    0        0 wlan0
+192.168.1.1     0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.104   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.105   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.106   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.109   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.110   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.112   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.115   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.117   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.118   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.121   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.127   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.131   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.133   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.137   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.138   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.142   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.146   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.147   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.149   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.152   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.154   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.157   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.158   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+192.168.1.166   0.0.0.0         255.255.255.255 UH    50     0        0 wlan0
+192.168.1.167   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
+
+</code>
+
+The daemon itself is working hard to bridge all of these connections and mailing ARP requests to both networks
+
+<code>
+arking entry 192.168.1.183(eth0) for removal
+Found ARP entry 192.168.1.183(wlan0), removed entries via other interfaces
+incomplete entry 192.168.1.144 found, request on all interfaces
+Sending ARP request for 192.168.1.144 to eth0
+Sending ARP request for 192.168.1.144 to wlan0
+Creating new arptab entry 192.168.1.144(wlan0)
+change entry 192.168.1.144(wlan0) to incomplete=1
+192.168.1.144(wlan0): set want_route 0
+Creating new arptab entry 192.168.1.144(eth0)
+change entry 192.168.1.144(eth0) to incomplete=1
+192.168.1.144(eth0): set want_route 0
+192.168.1.171(eth0): set want_route 1
+Marking entry 192.168.1.171(wlan0) for removal
+Found ARP entry 192.168.1.171(eth0), removed entries via other interfaces
+192.168.0.154(eth0): set want_route 1
+Marking entry 192.168.0.154(wlan0) for removal
+</code>
+
+By running the mitmf attack code, it will now listen and inject requests on both supposedly isolated networks (because YOU are the bridge). Or more specifically, the routing daemon is.
+
+# Warnings of Proxy ARP
+
+Keen IT personnel will perceive using parprouted as a ARP-Spoofing attack. Proxy ARP Daemons can be defeated (crashed) by spamming ARP requests to devices that do not exist to the attacker.
+
+In other words, you can be one-shotted. In the event that happens, check your routing tables because it may get borked.
