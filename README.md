@@ -191,6 +191,8 @@ Only activate Proxy ARP, well... never. Unless you are desperate.
 
 This feature is disabled by default due to the limitations of the netifaces module and it's inability to query for a gateway by a specific interface. We are working on a solution right now.
 
+**Solution Resolved: If auto-acquire gateways is selected to be ON, as in AUTO_ACQUIRE_GATEWAY = 1, then you will be presented a list of gateways you would like to target and spoof before the attack begins.**
+
 
 Instead of constantly editing your mitmf.cfg file over and over again every time you login to a new cracked wireless network, leaving the AUTO_ACQUIRE_GATEWAY option to = 1 will use python netifaces to determine the gateway automatically.
 
