@@ -15,9 +15,12 @@ Hello, so I just got my brand new/used OnePlus One and immediately added Kali Ne
 
 This can be configured to work as a Custom Command in the NetHunter App Menu
 
-Within it, is a simple two-button ON/OFF attack switch. Select 1 and press [Enter] to start the attack. Select 2 and [Enter] to stop the attack and wipe all traces of any background processes that may be running (Responder listeners on certain ports)
+Within it, is a simple two-button ON/OFF attack switch. **Select 1 and press [Enter] to start the attack. Then choose a detected gateway to start mitmf with your enabled options.**
+
+Select 2 and [Enter] to stop the attack and wipe all traces of any background processes that may be running (Responder listeners on certain ports)
 
 ![](https://raw.githubusercontent.com/tanc7/Facerider/master/fr-simpleonoff.png)
+
 # Installation
 
 Using your nethunter device, git clone this repo
@@ -107,39 +110,10 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 192.168.0.117   0.0.0.0         255.255.255.255 UH    50     0        0 wlan0
 192.168.0.127   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
 192.168.0.139   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.154   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.170   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.177   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.181   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.184   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.212   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.230   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.238   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.242   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.0.249   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
 192.168.0.254   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
 192.168.1.0     0.0.0.0         255.255.255.0   U     600    0        0 wlan0
 192.168.1.1     0.0.0.0         255.255.255.255 UH    50     0        0 eth0
 192.168.1.104   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.105   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.106   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.109   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.110   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.112   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.115   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.117   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.118   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.121   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.127   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.131   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.133   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.137   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.138   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.142   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.146   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.147   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.149   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
-192.168.1.152   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
 192.168.1.154   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
 192.168.1.157   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
 192.168.1.158   0.0.0.0         255.255.255.255 UH    50     0        0 eth0
@@ -200,4 +174,3 @@ However, some networks have well hidden gateways, particularly the Cisco-Meraki 
 
 My advice in determining the correct gateway is to use "traceproto 8.8.8.8" and then follow the route it takes. Usually, the gateway is the first hop.
 
-Sometimes, this may throw a KeyError in Python, because your Wi-Fi Connection is not considered "Default" (because your cell data connection is 'default'), if this happens, simply set AUTO_ACQUIRE_GATEWAY = 0 and manually enter the gateway.

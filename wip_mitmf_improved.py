@@ -11,7 +11,7 @@ config_file = "mitmf.cfg"
 
 def readToLines(config_file):
     r = popen_background("cat mitmf.cfg  | grep -vi \#")
-    print str(r)
+    # print str(r)
     l = r.splitlines()
     return l
 
@@ -61,7 +61,7 @@ def readConfig(config_file):
     # r = f.read()
     # l = r.splitlines()
     r = popen_background("cat mitmf.cfg  | grep -vi \#")
-    print str(r)
+    # print str(r)
     l = r.splitlines()
     for line in l:
         if re.search("INTERFACE", line):
