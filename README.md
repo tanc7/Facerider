@@ -17,6 +17,9 @@ This can be configured to work as a Custom Command in the NetHunter App Menu
 
 Within it, is a simple two-button ON/OFF attack switch. **Select 1 and press [Enter] to start the attack. Then choose a detected gateway to start mitmf with your enabled options.**
 
+![](https://raw.githubusercontent.com/tanc7/Facerider/master/fr-selectgateway.png)
+
+
 Select 2 and [Enter] to stop the attack and wipe all traces of any background processes that may be running (Responder listeners on certain ports)
 
 ![](https://raw.githubusercontent.com/tanc7/Facerider/master/fr-simpleonoff.png)
