@@ -53,7 +53,7 @@ SPOOF_TARGET can be left commented out if you wish to attack the entire subnet.
 
 Running the --filepwn and --browsersniper options throws an error from the mitmf app. It is unable to connect to the msfrpcd service no matter how hard I try. This partly has to do with the changes that Rapid7 added to their msfrpc daemon and the fact that **mitmf has been a abandoned project since 2015. I am still WORKING on resolving this.**
 
-# Don't forget to update your sources.list!
+# Don't forget to update your sources.list! Update: Added a script that will fix your Nethunter installation
 
 If you just installed Nethunter, you may have realized it is using the nonexistent Sana repositories, predating Kali linux rolling. Because of that, you are unable to apt-get update.
 
@@ -186,3 +186,11 @@ Basically mitmf plugins sniff for traffic, and either analyzes it, parses it, or
 You can crash and kill routers using Proxy ARP with mitmf! Be forewarned! You can permanently bork your own routing tables and iptables (until you either flush them or reboot).
 
 Only activate Proxy ARP, well... never. Unless you are desperate.
+
+# Update: Added, automatic gateway acquisition feature
+
+Instead of constantly editing your mitmf.cfg file over and over again every time you login to a new cracked wireless network, leaving the AUTO_ACQUIRE_GATEWAY option to = 1 will use python netifaces to determine the gateway automatically.
+
+However, some networks have well hidden gateways, particularly the Cisco-Meraki setups (which also has AP isolation preventing this attack from working anyways), so you still have the option to switch AUTO_ACQUIRE_GATEWAY = 0 and set SPOOF_GATEWAY = 192.168.1.1 or whatever.
+
+My advice in determining the correct gateway is to use "traceproto 8.8.8.8" and then follow the route it takes. Usually, the gateway is the first hop.
