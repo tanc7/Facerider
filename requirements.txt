@@ -1,7 +1,6 @@
 adal==1.1.0
 adns-python==1.2.1
 alembic==1.0.0.dev0
-ansible==2.5.4
 antlr4-python3-runtime==4.7.1
 anyjson==0.3.3
 apache-libcloud==2.3.0
@@ -180,7 +179,6 @@ oslo.utils==3.37.0
 OWSLib==0.17.0
 packaging==18.0
 PAM==0.4.2
-paramiko==2.4.0
 passlib==1.7.1
 pathlib2==2.3.2
 pathtools==0.1.2
@@ -203,7 +201,6 @@ py-ubjson==0.12.0
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pycairo==1.16.2
-pycrypto==2.6.1
 pycryptodomex==3.6.1
 pycurl==7.43.0.1
 pydns==2.3.6
