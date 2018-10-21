@@ -5,6 +5,7 @@ readUserInput = eznhlib.readUserInput
 menu_parser = eznhlib.menu_parser
 popen_background = eznhlib.popen_background
 clean_iptables = eznhlib.clean_iptables
+userSelectGateway = eznhlib.userSelectGateway
 
 config_file = "mitmf.cfg"
 
@@ -110,7 +111,7 @@ def readConfig(config_file):
         if re.search("AUTO_ACQUIRE_GATEWAY",line):
             s = line.split(" = ")
             if s[1] == "1":
-                gw = get_gw()
+                gw = userSelectGateway()
                 cmd = cmd + " --gateway {}".format(str(gw))
             else:
                 for line in l:

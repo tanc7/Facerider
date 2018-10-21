@@ -19,6 +19,23 @@ def get_gw():
     gw = gateway_ip
     return gw
 
+def userSelectGateway():
+    gws = netifaces.gateways()
+    gwDict = {}
+    counter = 1
+    for gw in gws:
+        print "DEBUG Index = ", str(gw)
+        gateway_ip = gws[netifaces.AF_INET][0][0]
+        # interface = gws[gw][netifaces.AF_INET][1]
+        gwDict[counter] = gateway_ip
+        counter += 1
+
+    print gwDict
+    print "Select a GATEWAY to spoof against"
+    userInput = int(raw_input("Enter a OPTION: "))
+    gw = gwDict[userInput]
+    print "Gateway Selected: ", str(gw)
+    return gw
 def readUserInput(inputFile):
     f = open(inputFile, 'r')
     r = f.read()
