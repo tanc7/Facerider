@@ -9,7 +9,11 @@ def bash_cmd(cmd):
     return
 
 def get_gw():
+    # for a nethunter device without a mobile connection, the key is 'default'
     gws = netifaces.gateways()
+    # gateway_ip = gws['default'][netifaces.AF_INET][0]
+    # interface = gws['default'][netifaces.AF_INET][1]
+    # Otherwise, it's [2] because 'default' is the cell phone's rndis0 interface that doesnt have a gateway, and therefore will throw errors
     gateway_ip = gws['default'][netifaces.AF_INET][0]
     interface = gws['default'][netifaces.AF_INET][1]
     gw = gateway_ip

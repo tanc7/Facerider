@@ -189,8 +189,13 @@ Only activate Proxy ARP, well... never. Unless you are desperate.
 
 # Update: Added, automatic gateway acquisition feature
 
+This feature is disabled by default due to the limitations of the netifaces module and it's inability to query for a gateway by a specific interface. We are working on a solution right now.
+
+
 Instead of constantly editing your mitmf.cfg file over and over again every time you login to a new cracked wireless network, leaving the AUTO_ACQUIRE_GATEWAY option to = 1 will use python netifaces to determine the gateway automatically.
 
 However, some networks have well hidden gateways, particularly the Cisco-Meraki setups (which also has AP isolation preventing this attack from working anyways), so you still have the option to switch AUTO_ACQUIRE_GATEWAY = 0 and set SPOOF_GATEWAY = 192.168.1.1 or whatever.
 
 My advice in determining the correct gateway is to use "traceproto 8.8.8.8" and then follow the route it takes. Usually, the gateway is the first hop.
+
+Sometimes, this may throw a KeyError in Python, because your Wi-Fi Connection is not considered "Default" (because your cell data connection is 'default'), if this happens, simply set AUTO_ACQUIRE_GATEWAY = 0 and manually enter the gateway.
