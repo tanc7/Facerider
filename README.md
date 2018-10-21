@@ -1,5 +1,8 @@
 # Facerider: New and improved mitmf fixes for Nethunter Phones and Tablets
 
+**Chang Tan**
+**Lister Unlimited Cybersecurity Solutions, LLC**
+
 ![](https://www.offensive-security.com/wp-content/uploads/2014/12/nethunter-onePlus-300x280.png)
 
 Hello, so I just got my brand new/used OnePlus One and immediately added Kali NetHunter to it. Only to my dismay, that a number of features are broken. (However a handful of features such as the Duckhunter HID module worked like a charm, not to knock on the original devs of Nethunter)

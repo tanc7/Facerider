@@ -107,10 +107,17 @@ def readConfig(config_file):
                     cmd = cmd + " --dhcp"
                 if s[1] == "ICMP":
                     cmd = cmd + " --icmp"
-        if re.search("SPOOF_GATEWAY",line):
+        if re.search("AUTO_ACQUIRE_GATEWAY",line):
             s = line.split(" = ")
-            if s[1] != "":
-                cmd = cmd + " --gateway {}".format(str(s[1]))
+            if s[1] == "1":
+                gw = get_gw()
+                cmd = cmd + " --gateway {}".format(str(gw))
+            else:
+                for line in l:
+                    if re.search("SPOOF_GATEWAY",line):
+                        s = line.split(" = ")
+                        if s[1] != "":
+                            cmd = cmd + " --gateway {}".format(str(s[1]))
         if re.search("SPOOF_TARGET",line):
             s = line.split(" = ")
             if s[1] != "":
