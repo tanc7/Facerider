@@ -102,10 +102,24 @@ def readConfig(config_file):
             if s[1] != "":
                 if s[1] == "ARP":
                     cmd = cmd + " --arp"
+                    for line in l:
+                        if re.search("ARP_MODE",line):
+                            s = line.split(" = ")
+                            amode = "rep"
+                            if s[1] == "REQUEST":
+                                amode = "req"
+                                cmd = cmd + " --arpmode {}".format(str(amode))
+                            if s[1] == "REPLY":
+                                amode = "rep"
+                                cmd = cmd + " --arpmode {}".format(str(amode))
                 if s[1] == "DNS":
                     cmd = cmd + " --dns"
                 if s[1] == "DHCP":
                     cmd = cmd + " --dhcp"
+                    for line in l:
+                        if re.search("DHCP_SHELLSHOCK_PAYLOAD",line):
+                            s = line.split(" = ")
+                            cmd = cmd + " --shellshock {}".format(str(s[1]))
                 if s[1] == "ICMP":
                     cmd = cmd + " --icmp"
         if re.search("AUTO_ACQUIRE_GATEWAY",line):
@@ -119,6 +133,10 @@ def readConfig(config_file):
                         s = line.split(" = ")
                         if s[1] != "":
                             cmd = cmd + " --gateway {}".format(str(s[1]))
+                    if re.search("SPOOF_GATEWAY_MAC",line):
+                        s = line.split(" = ")
+                        if s[1] != "":
+                            cmd = cmd + " --gatewaymac {}".format(str(s[1]))
         if re.search("SPOOF_TARGET",line):
             s = line.split(" = ")
             if s[1] != "":

@@ -48,17 +48,17 @@ def readUserInput(inputFile):
     return string
 
 def menu_parser(menu):
-    options_list = {}
+    # options_list = {}
     menu = str(menu)
     menu = menu.splitlines()
     counter = 1
     for item in menu:
         option = str(item.encode('utf-8')).rstrip().strip()
         print '\t\t',str(counter),'\t\t\t',option
-        options_list[counter] = option
+        # options_list[counter] = option
         counter += 1
-    print options_list
-    return options_list
+    # print options_list
+    return
 def popen_background(cmd):
     p = subprocess.Popen(cmd, shell=True, executable='/bin/bash', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     o = p.stdout.read()
