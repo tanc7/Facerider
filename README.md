@@ -15,7 +15,9 @@ Hello, so I just got my brand new/used OnePlus One and immediately added Kali Ne
 
 This can be configured to work as a Custom Command in the NetHunter App Menu
 
-![](https://github.com/tanc7/Facerider/blob/master/FaceRiderDemoVideo.mp4)
+**Checkout the demo here**
+
+<a href="https://github.com/tanc7/Facerider/blob/master/FaceRiderDemoVideo.mp4">Demonstration Video of how to use Facerider-MITMf</a>
 
 Within it, is a simple two-button ON/OFF attack switch. **Select 1 and press [Enter] to start the attack. Then choose a detected gateway to start mitmf with your enabled options.**
 
