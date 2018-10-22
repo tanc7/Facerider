@@ -40,6 +40,14 @@ Then edit the mitmf.cfg file, personally I do not use nano on Kali Nethunter bec
 
 Leave empty = options commented out so the script won't throw a error.
 
+# Update: Added, automatic gateway acquisition feature
+
+Instead of constantly editing your mitmf.cfg file over and over again every time you login to a new cracked wireless network, leaving the AUTO_ACQUIRE_GATEWAY option to = 1 **will use python netifaces to determine the gateway automatically.**
+
+However, some networks have well hidden gateways, particularly the Cisco-Meraki setups (which also has AP isolation preventing this attack from working anyways), so you still have the option to switch AUTO_ACQUIRE_GATEWAY = 0 and set SPOOF_GATEWAY = 192.168.1.1 or whatever.
+
+My advice in determining the correct gateway is to use "traceproto 8.8.8.8" and then follow the route it takes. Usually, the gateway is the first hop.
+
 # Beef Framework on a Remote VPS
 
 The line "JS_URL = http://127.0.0.1:3000/hook.js" can be modified to point to a remote VPS (such as Amazon Web Services) running the beef framework allowing you to hook local victims browsers and then exploit them remotely.
@@ -167,17 +175,3 @@ Basically mitmf plugins sniff for traffic, and either analyzes it, parses it, or
 You can crash and kill routers using Proxy ARP with mitmf! Be forewarned! You can permanently bork your own routing tables and iptables (until you either flush them or reboot).
 
 Only activate Proxy ARP, well... never. Unless you are desperate.
-
-# Update: Added, automatic gateway acquisition feature
-
-This feature is disabled by default due to the limitations of the netifaces module and it's inability to query for a gateway by a specific interface. We are working on a solution right now.
-
-**Solution Resolved: If auto-acquire gateways is selected to be ON, as in AUTO_ACQUIRE_GATEWAY = 1, then you will be presented a list of gateways you would like to target and spoof before the attack begins.**
-
-
-Instead of constantly editing your mitmf.cfg file over and over again every time you login to a new cracked wireless network, leaving the AUTO_ACQUIRE_GATEWAY option to = 1 will use python netifaces to determine the gateway automatically.
-
-However, some networks have well hidden gateways, particularly the Cisco-Meraki setups (which also has AP isolation preventing this attack from working anyways), so you still have the option to switch AUTO_ACQUIRE_GATEWAY = 0 and set SPOOF_GATEWAY = 192.168.1.1 or whatever.
-
-My advice in determining the correct gateway is to use "traceproto 8.8.8.8" and then follow the route it takes. Usually, the gateway is the first hop.
-
