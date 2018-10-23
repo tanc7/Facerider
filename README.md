@@ -137,7 +137,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 
 </code>
 
-The daemon itself is working hard to bridge all of these connections and mailing ARP requests to both networks
+**The daemon itself is working hard to bridge all of these connections and mailing ARP requests to both networks**
 
 <code>
 arking entry 192.168.1.183(eth0) for removal
@@ -158,7 +158,7 @@ Found ARP entry 192.168.1.171(eth0), removed entries via other interfaces
 Marking entry 192.168.0.154(wlan0) for removal
 </code>
 
-By running the mitmf attack code, it will now listen and inject requests on both supposedly isolated networks (because YOU are the bridge). Or more specifically, the routing daemon is.
+**By running the mitmf attack code, it will now listen and inject requests on both supposedly isolated networks (because YOU are the bridge). Or more specifically, the routing daemon is.**
 
 # Warnings of Proxy ARP
 

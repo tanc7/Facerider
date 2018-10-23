@@ -235,6 +235,7 @@ def startAttack(cmd):
     if re.search("filepwn", cmd):
         startMsfrpcd()
     bash_cmd(cmd)
+    main()
     return
 
 def main():
@@ -248,6 +249,7 @@ def main():
     elif userInput == 2:
         cmd = "fuser -k 55552/tcp 55553/tcp 587/tcp 110/tcp 9999/tcp 143/tcp 80/tcp 10000/tcp 21/tcp 88/tcp 25/tcp 1433/tcp 445/tcp 3141/tcp 389/tcp;pkill parprouted"
         bash_cmd(cmd)
+        main()
     else:
         print "You have entered a invalid option"
         main(n)
