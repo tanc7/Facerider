@@ -1,4 +1,4 @@
-import eznhlib, re
+import eznhlib, re, time, os, sys
 bash_cmd = eznhlib.bash_cmd
 get_gw = eznhlib.get_gw
 readUserInput = eznhlib.readUserInput
@@ -8,13 +8,37 @@ clean_iptables = eznhlib.clean_iptables
 userSelectGateway = eznhlib.userSelectGateway
 
 config_file = "mitmf.cfg"
+banner = """
+  ______                  _     _
+ |  ____|                (_)   | |
+ | |__ __ _  ___ ___ _ __ _  __| | ___ _ __
+ |  __/ _` |/ __/ _ \ '__| |/ _` |/ _ \ '__|
+ | | | (_| | (_|  __/ |  | | (_| |  __/ |
+ |_|  \__,_|\___\___|_|  |_|\__,_|\___|_|
 
+Chang Tan
+Lister Unlimited Cybersecurity Solutions, LLC.
+changtan@listerunlimited.com
+
+Easily configurable text-based overlay for MITMf Man-in-the-Middle-Framework modules
+Written due to the abandonment of the original project in 2015
+And due to badly desired needs and changes to the current Kali Nethunter builds on Mobile Phones and Tablets (Oneplus One is dev's phone)
+
+Simply edit mitmf.cfg with your favorite Android text editor and launch!
+
+Your current settings are coming up in 3, 2, 1....
+"""
+print banner
+
+time.sleep(3)
+bash_cmd("cat mitmf.cfg | grep -v \# | awk 'NF'")
 def readToLines(config_file):
     r = popen_background("cat mitmf.cfg  | grep -vi \#")
     # print str(r)
     l = r.splitlines()
     return l
 
+# The following four functions merely relate to Proxy ARP Mode. It has no other purpose than to serve as a hacked together remedy for clunky programming I did in the hideous parse-command line code beneath it.
 def getProxyARPiface1(config_file):
     lines = readToLines(config_file)
     for line in lines:
@@ -55,6 +79,8 @@ def startProxyARP(cmd):
                 bash_cmd(c)
                 print str(c)
     return cmd
+
+    # avert your eyes. It's quite horrible to look at.
 def readConfig(config_file):
     cmd = "mitmf"
     # f = open(config_file,'r')
@@ -64,6 +90,7 @@ def readConfig(config_file):
     # print str(r)
     l = r.splitlines()
     for line in l:
+        # All the code does from this part, is slowly parse together the final command from the mitmf.cfg file, the way exactly that the mitmf dev wanted to do it
         if re.search("INTERFACE", line):
             s = line.split(" = ")
             iface = s[1]
@@ -221,7 +248,10 @@ def readConfig(config_file):
             s = line.split(" = ")
             if s[1] == "1":
                 cmd = cmd + " --forcewpadauth"
+    # Checks if ProxyARP settings are enabled. If it is, the proxy ARP daemon is started
     cmd = startProxyARP(cmd)
+    # ENable IP Forwarding to allow the nethunter device to function as a router
+    bash_cmd("echo '1' > /proc/sys/net/ipv4/ip_forward")
     print str(cmd)
     startAttack(cmd)
     return cmd
@@ -230,6 +260,7 @@ def startMsfrpcd():
     bash_cmd("msfrpcd -U msf -P abc123 -a 127.0.0.1 -p 55552")
     return
 def startAttack(cmd):
+    # Checks if either browsersniper or filepwn/bdfproxyis enabled, which requires MSFRPCD to be started
     if re.search("browsersniper", cmd):
         startMsfrpcd()
     if re.search("filepwn", cmd):
@@ -240,6 +271,7 @@ def startAttack(cmd):
 
 def main():
     print """
+    \r\n\t\t\t\t MAIN MENU
     \r\n\t1:\tStart Attack with the configuration settings settings settings set
     \r\n\t2:\tStop the Attack
     """
@@ -247,11 +279,14 @@ def main():
     if userInput == 1:
         readConfig(config_file)
     elif userInput == 2:
+        # kills all responder services and parprouted IF RUNNing.
         cmd = "fuser -k 55552/tcp 55553/tcp 587/tcp 110/tcp 9999/tcp 143/tcp 80/tcp 10000/tcp 21/tcp 88/tcp 25/tcp 1433/tcp 445/tcp 3141/tcp 389/tcp;pkill parprouted"
         bash_cmd(cmd)
+        os.system('clear')
+        print "Attack Stopped"
         main()
     else:
         print "You have entered a invalid option"
-        main(n)
+        main()
     return
 main()
