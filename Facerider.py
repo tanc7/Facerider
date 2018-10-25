@@ -37,7 +37,7 @@ Your current settings are coming up in 3, 2, 1....
 """
 print banner
 
-time.sleep(3)
+# time.sleep(3)
 bash_cmd("cat mitmf.cfg | grep -v \# | awk 'NF'")
 def readToLines(config_file):
     r = popen_background("cat mitmf.cfg  | grep -vi \#")
@@ -293,7 +293,6 @@ def startAttack(cmd, gw, iface):
     bash_cmd(cmd)
     print red("DEBUG: Command Executed: %s" % str(cmd))
     startBDFProxy(gw, iface)
-    main()
     return
 
 def main():
