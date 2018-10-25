@@ -11,7 +11,7 @@ Hello, so I just got my brand new/used OnePlus One and immediately added Kali Ne
 
 **Using this is much simpler, just edit mitmf.cfg with your Android text editor of choice** (I use Total Commander's text editing function) and set your options to 0 (OFF) or 1 (ON), and set variables such as your Beef Framework hook.js URL to the = sign, and then run
 
-<code>cd Facerider;python wip_mitmf_improved.py</code>
+<code>cd Facerider;python Facerider.py</code>
 
 This can be configured to work as a Custom Command in the NetHunter App Menu
 
