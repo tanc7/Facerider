@@ -48,6 +48,15 @@ However, some networks have well hidden gateways, particularly the Cisco-Meraki 
 
 My advice in determining the correct gateway is to use "traceproto 8.8.8.8" and then follow the route it takes. Usually, the gateway is the first hop.
 
+# Update: Added temporary "hacky" fix to BDFProxy
+
+In this latest version, BDFProxy will auto-start in the background. It is smart enough to automatically determine your local IPv4 address using just the INTERFACE line filled, via the netifaces module.
+
+To catch the shells, open a new Kali Linux terminal and enter <code>msfconsole -r bdfproxy_msf_resource.rc</code>
+
+BDFProxy stands for Backdoor Factory Proxy, and during the ARP Spoofing process, any non HTTPS downloads of .exe, .zip, .lin files, etc., will be auto-patched with Metasploit Meterpreter Remote Access Trojans.
+
+
 # Beef Framework on a Remote VPS
 
 The line "JS_URL = http://127.0.0.1:3000/hook.js" can be modified to point to a remote VPS (such as Amazon Web Services) running the beef framework allowing you to hook local victims browsers and then exploit them remotely.
